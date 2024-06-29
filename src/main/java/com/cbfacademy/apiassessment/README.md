@@ -32,13 +32,14 @@ mvnw spring-boot:run
 ### **How my API works:**
 You can test my API after you've cloned the respository, installed the dependancies and ran Spring Boot. These are instructions on how to test my api.
 1. You have to open up Postman (or another REST client) and request body in JSON format for the `GET`,`PUT` and `POST` requests. 
-My URL is: http://localhost:8080/api/budgetplanner                                              
-To `POST` it's http://localhost:8080/api/budgetplanner/calculate-savings 
+                                           
+To `POST` it's `http://localhost:8080/(what you want to post)`
 
 ### Example
-Insert this JSON as the body on Postman for each endpoint : 
+Insert this JSON as the body on Postman `POST` to create data for each entity class: 
 
-User:
+User: `http://localhost:8080/user`
+
 ```json
 {
     "name": "Miski Hassan",
@@ -47,7 +48,7 @@ User:
     "userPercentage": 20
 }
 ```
-Income: 
+Income: `http://localhost:8080/income/{id}`
 
 ```json
  {
@@ -58,7 +59,7 @@ Income:
     "frequency": "monthly"
 }
 ```
-Benefits and Tax Credits
+Benefits and Tax Credits: `http://localhost:8080/benefitsAndTaxCredits/{id}`
 ```JSON 
  {
     "jobSeekersAllowanceById": 0.00,
@@ -75,16 +76,15 @@ Benefits and Tax Credits
     "frequency": "monthly"
 }
  ```
- Other Income:
+ Other Income: `http://localhost:8080/otherincome/{id}`
 ```JSON 
 {
-
    "rentalIncomeById": 300.00,
    "investmentIncomeById": 200.00,
    "frequency": "monthly"
 }
 ```  
-Pensions:
+Pensions: `http://localhost:8080/pensions/{id}`
 ```JSON 
 {
 
@@ -94,7 +94,7 @@ Pensions:
 }
  ```   
 
-Bills:
+Bills:   `http://localhost:8080/bills/{id}`
 ```JSON 
 {
    "rentById": 1400.00,
@@ -108,7 +108,7 @@ Bills:
 }
  ```
 
-Leisure:
+Leisure:  `http://localhost:8080/leisure/{id}`
 ```JSON 
 {
   "entertainmentById": 150.00,
@@ -120,15 +120,35 @@ Leisure:
 
 ```
    
+Once the data has been created for each entity, then...
+
+
+
+Insert this JSON as the body on Postman `POST` to calculate savings based on % using this URL:`http://localhost:8080/budgetplanner/calculate-savings/{id}`
+```json
+{
+
+  "id": "123e4567-e89b-12d3-a456-556642440000", // Replace with a valid UUID
+  "totalIncome": 5000.00,
+  "totalExpenses": 3000.00,
+  "userPercentage": 15 
+
+
+}
+
+```
+ Type this URL on Postman as a `GET` to see the sorted % (most popular to least popular):
+  `http://localhost:8080/api/budgetplanner/sort/sortAllUsers` 
+
+
+To this if the sorting works, type this URL as a `GET` request to test the quick sort algorithm: 
+`http://localhost:8080/api/budgetplanner/user/sort-users-percentages`
 
 
 
 
 
 
-
-
-    
     
 
 

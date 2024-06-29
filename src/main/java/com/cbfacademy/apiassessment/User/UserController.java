@@ -1,7 +1,7 @@
 package com.cbfacademy.apiassessment.User;
 
 import java.math.BigDecimal;
-
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
@@ -18,13 +18,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.cbfacademy.apiassessment.Algorithm.QuickSortAlgorithm;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
 UserService userService;
+ private final QuickSortAlgorithm quickSortAlgorithm; 
 
-public UserController(UserService userService){
+public UserController(UserService userService, QuickSortAlgorithm quickSortAlgorithm){
     this.userService = userService;
+    this.quickSortAlgorithm = quickSortAlgorithm;
 }
 
 @GetMapping("/{id}")
@@ -32,10 +36,20 @@ public Optional<User> findById(@PathVariable UUID id)throws NoSuchElementExcepti
     return userService.getById(id);
 }
 
+@GetMapping
+public List<User> getId(@PathVariable UUID id) {
+    return userService.findAll();
+}
+
 
 @GetMapping("get-percentage/{id}")
 public BigDecimal getUserPercentage(@PathVariable UUID id) {
     return userService.getUserPercentage(id);
+}
+
+@GetMapping("/sort-users-percentages")
+public List<BigDecimal> getSortedPercentages() {
+    return quickSortAlgorithm.sortAllUsersPercentage();
 }
 
 
@@ -71,6 +85,17 @@ public ResponseEntity<?> deleteUserById(@PathVariable UUID id) {
     } catch (RuntimeException exception) {
         throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage(), exception);
     }
+}
+
+    @DeleteMapping("/delete-all")
+    public ResponseEntity<?> deleteAllUsers() {
+        try {
+            userService.deleteAllUsers();
+            return ResponseEntity.noContent().build();
+        } catch (RuntimeException exception) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage(), exception);
+        }
+        
 
 }
 }
