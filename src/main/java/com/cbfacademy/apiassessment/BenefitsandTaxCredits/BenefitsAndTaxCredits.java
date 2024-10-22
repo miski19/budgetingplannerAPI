@@ -27,49 +27,49 @@ private UUID id;
     private User user;
     
 
-    private BigDecimal jobSeekersAllowanceById;
-    private BigDecimal workingTaxCreditById;
-    private BigDecimal childTaxCreditById;
-    private BigDecimal childBenefitById;
-    private BigDecimal employmentSupportAllowanceById;
-    private BigDecimal universalCreditById;
-    private BigDecimal disabilityAllowanceById;
-    private BigDecimal attendanceAllowanceById;
-    private BigDecimal carersAllowanceById;
-    private BigDecimal housingBenefitById;
-    private BigDecimal maternityAllowanceById;
+    private BigDecimal jobSeekersAllowance;
+    private BigDecimal workingTaxCredit;
+    private BigDecimal childTaxCredit;
+    private BigDecimal childBenefit;
+    private BigDecimal employmentSupportAllowance;
+    private BigDecimal universalCredit;
+    private BigDecimal disabilityAllowance;
+    private BigDecimal attendanceAllowance;
+    private BigDecimal carersAllowance;
+    private BigDecimal housingBenefit;
+    private BigDecimal maternityAllowance;
     private String frequency; 
     
    
 
 //Constructors: default and parameterized
 public BenefitsAndTaxCredits() {
-this(null, BigDecimal.ZERO, BigDecimal.ZERO,BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 
+this(null,  BigDecimal.ZERO, BigDecimal.ZERO,BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 
     BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, "monthly");
    
     }
 
  
 
-public BenefitsAndTaxCredits(User user, BigDecimal jobSeekersAllowanceById, BigDecimal workingTaxCreditById, BigDecimal childTaxCreditById, BigDecimal childBenefitById,
-BigDecimal employmentSupportAllowanceById, BigDecimal universalCreditById, BigDecimal disabilityAllowanceById, BigDecimal attendanceAllowanceById,
-BigDecimal carersAllowanceById, BigDecimal housingBenefitById, BigDecimal maternityAllowanceById, String frequency) {
-this.user = user;
-this.jobSeekersAllowanceById = jobSeekersAllowanceById;
-this.workingTaxCreditById = workingTaxCreditById;
-this.childTaxCreditById = childTaxCreditById;
-this.childBenefitById = childBenefitById;
-this.employmentSupportAllowanceById = employmentSupportAllowanceById;
-this.universalCreditById = universalCreditById;
-this.disabilityAllowanceById = disabilityAllowanceById;
-this.attendanceAllowanceById = attendanceAllowanceById;
-this.carersAllowanceById = carersAllowanceById;
-this.housingBenefitById = housingBenefitById;
-this.maternityAllowanceById= maternityAllowanceById;
+public BenefitsAndTaxCredits(UUID id, BigDecimal jobSeekersAllowance, BigDecimal workingTaxCredit, BigDecimal childTaxCredit, BigDecimal childBenefit,
+BigDecimal employmentSupportAllowance, BigDecimal universalCredit, BigDecimal disabilityAllowance, BigDecimal attendanceAllowance,
+BigDecimal carersAllowance, BigDecimal housingBenefit, BigDecimal maternityAllowance, String frequency) {
+this.id = id;
+this.jobSeekersAllowance = jobSeekersAllowance;
+this.workingTaxCredit = workingTaxCredit;
+this.childTaxCredit = childTaxCredit;
+this.childBenefit = childBenefit;
+this.employmentSupportAllowance = employmentSupportAllowance;
+this.universalCredit = universalCredit;
+this.disabilityAllowance = disabilityAllowance;
+this.attendanceAllowance = attendanceAllowance;
+this.carersAllowance = carersAllowance;
+this.housingBenefit = housingBenefit;
+this.maternityAllowance= maternityAllowance;
 this.frequency = frequency;
 
 }
-//id issue: I am using UUID so ? I changed it. It wanted to do this: id=null
+
 
 //Getters and setters
 public UUID getId() {
@@ -83,89 +83,89 @@ public User getUser(){
 public void setuser (User user) {
     this.user = user;
 }
-public BigDecimal getJobSeekersAllowanceById() {
-    return jobSeekersAllowanceById;
+public BigDecimal getJobSeekersAllowance() {
+    return jobSeekersAllowance;
 }
 
-public void setJobSeekersAllowanceById(BigDecimal jobSeekersAllowanceById) {
-    this.jobSeekersAllowanceById = jobSeekersAllowanceById;
+public void setJobSeekersAllowance(BigDecimal jobSeekersAllowance) {
+    this.jobSeekersAllowance = jobSeekersAllowance;
 }
 
-public BigDecimal getWorkingTaxCreditById() {
-    return workingTaxCreditById;
+public BigDecimal getWorkingTaxCredit() {
+    return workingTaxCredit;
 }
 
-public void setWorkingTaxCreditById(BigDecimal workingTaxCreditById) {
-    this.workingTaxCreditById = workingTaxCreditById;
+public void setWorkingTaxCredit(BigDecimal workingTaxCredit) {
+    this.workingTaxCredit = workingTaxCredit;
 }
 
-public BigDecimal getChildTaxCreditById() {
-    return childTaxCreditById;
+public BigDecimal getChildTaxCredit() {
+    return childTaxCredit;
 }
 
-public void setChildTaxCreditById(BigDecimal childTaxCreditById) {
-    this.childTaxCreditById = childTaxCreditById;
+public void setChildTaxCredit(BigDecimal childTaxCredit) {
+    this.childTaxCredit = childTaxCredit;
 }
 
-public BigDecimal getChildBenefitById() {
-    return childBenefitById;
+public BigDecimal getChildBenefit() {
+    return childBenefit;
 }
 
-public void setChildBenefitById(BigDecimal childBenefitById) {
-    this.childBenefitById = childBenefitById;
+public void setChildBenefit(BigDecimal childBenefit) {
+    this.childBenefit = childBenefit;
 }
 
-public BigDecimal getEmploymentSupportAllowanceById() {
-    return employmentSupportAllowanceById;
+public BigDecimal getEmploymentSupportAllowance() {
+    return employmentSupportAllowance;
 }
 
-public void setEmploymentSupportAllowanceById(BigDecimal employmentSupportAllowanceById) {
-    this.employmentSupportAllowanceById = employmentSupportAllowanceById;
+public void setEmploymentSupportAllowance(BigDecimal employmentSupportAllowance) {
+    this.employmentSupportAllowance = employmentSupportAllowance;
 }
 
-public BigDecimal getUniversalCreditById() {
-    return universalCreditById;
+public BigDecimal getUniversalCredit() {
+    return universalCredit;
 }
 
-public void setUniversalCreditById(BigDecimal universalCreditById) {
-    this.universalCreditById = universalCreditById;
+public void setUniversalCredit(BigDecimal universalCredit) {
+    this.universalCredit = universalCredit;
 }
 
-public BigDecimal getDisabilityAllowanceById() {
-    return disabilityAllowanceById;
+public BigDecimal getDisabilityAllowance() {
+    return disabilityAllowance;
 }
 
-public void setDisabilityAllowanceById(BigDecimal disabilityAllowanceById) {
-    this.disabilityAllowanceById = disabilityAllowanceById;
+public void setDisabilityAllowance(BigDecimal disabilityAllowance) {
+    this.disabilityAllowance = disabilityAllowance;
 }
 
-public BigDecimal getAttendanceAllowanceById() {
-    return attendanceAllowanceById;
+public BigDecimal getAttendanceAllowance() {
+    return attendanceAllowance;
 }
 
-public void setAttendanceAllowanceById(BigDecimal attendanceAllowanceById) {
-    this.attendanceAllowanceById = attendanceAllowanceById;
+public void setAttendanceAllowance(BigDecimal attendanceAllowance) {
+    this.attendanceAllowance = attendanceAllowance;
 }
 
-public BigDecimal getCarersAllowanceById() {
-    return carersAllowanceById;
+public BigDecimal getCarersAllowance() {
+    return carersAllowance;
 }
 
-public void setCarersAllowanceById(BigDecimal carersAllowanceById) {
-    this.carersAllowanceById = carersAllowanceById;
+public void setCarersAllowance(BigDecimal carersAllowance) {
+    this.carersAllowance = carersAllowance;
 }
 
-public BigDecimal getHousingBenefitById() {
-     return housingBenefitById;
+public BigDecimal getHousingBenefit() {
+     return housingBenefit;
 }
-public void setHousingBenefitbyId(BigDecimal housingBenefitById) {
-    this.housingBenefitById = housingBenefitById;
+public void setHousingBenefit(BigDecimal housingBenefit) {
+    this.housingBenefit = housingBenefit;
 }
-public BigDecimal getMaternityAllowanceById() {
-    return maternityAllowanceById;
+public BigDecimal getMaternityAllowance() {
+    return maternityAllowance;
 }
-public void setMaternityAllowanceById(BigDecimal maternityAllowanceById) {
-    this.maternityAllowanceById = maternityAllowanceById;
+public void setMaternityAllowance(BigDecimal maternityAllowance) {
+    this.maternityAllowance= maternityAllowance;
 }
 public String getFrequency() {
     return frequency;

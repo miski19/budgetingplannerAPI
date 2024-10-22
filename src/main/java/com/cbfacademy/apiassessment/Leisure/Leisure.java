@@ -26,10 +26,10 @@ private UUID id;
 @JoinColumn(name = "user_id", referencedColumnName = "id")
 private User user;
 
-private BigDecimal entertainmentById; 
-private BigDecimal diningOutById;
-private BigDecimal travelById;
-private BigDecimal sportsMembershipById;
+private BigDecimal entertainment; 
+private BigDecimal diningOut;
+private BigDecimal travel;
+private BigDecimal sportsMembership;
 private String frequency;
 
 // Constructors: default and parameterized
@@ -37,12 +37,12 @@ public Leisure() {
 this(null, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, "monthly");
 }
 
-public Leisure(User user, BigDecimal entertainmentById, BigDecimal diningOutById, BigDecimal travelById, BigDecimal sportsMembershipById, String frequency) {
-    this.user= user;
-    this.entertainmentById = entertainmentById;
-    this.diningOutById = diningOutById;
-    this.travelById = travelById;
-    this.sportsMembershipById = sportsMembershipById;
+public Leisure(UUID id, BigDecimal entertainment, BigDecimal diningOut, BigDecimal travel, BigDecimal sportsMembership, String frequency) {
+    this.id= id;
+    this.entertainment = entertainment;
+    this.diningOut = diningOut;
+    this.travel = travel;
+    this.sportsMembership = sportsMembership;
     this.frequency = frequency;
 }
 
@@ -57,36 +57,36 @@ public User getUser(){
 public void setuser (User user) {
     this.user = user;
 }
-public BigDecimal getEntertainmentById() {
-    return entertainmentById;
+public BigDecimal getEntertainment() {
+    return entertainment;
 }
 
-public void setEntertainmentById(BigDecimal entertainmentById) {
-    this.entertainmentById = entertainmentById;
+public void setEntertainment(BigDecimal entertainment) {
+    this.entertainment = entertainment;
 }
 
-public BigDecimal getDiningOutById() {
-    return diningOutById;
+public BigDecimal getDiningOut() {
+    return diningOut;
 }
 
-public void setDiningOutById(BigDecimal diningOutById) {
-    this.diningOutById = diningOutById;
+public void setDiningOut(BigDecimal diningOut) {
+    this.diningOut = diningOut;
 }
 
-public BigDecimal getTravelById() {
-    return travelById;
+public BigDecimal getTravel() {
+    return travel;
 }
 
-public void setTravelById(BigDecimal travelById) {
-    this.travelById = travelById;
+public void setTravel(BigDecimal travel) {
+    this.travel = travel;
 }
 
-public BigDecimal getSportsMembershipById() {
-    return sportsMembershipById;
+public BigDecimal getSportsMembership() {
+    return sportsMembership;
 }
 
-public void setSportsMembershipById(BigDecimal sportsMembershipById) {
-    this.sportsMembershipById = sportsMembershipById;
+public void setSportsMembership(BigDecimal sportsMembership) {
+    this.sportsMembership = sportsMembership;
 }
 
 public String getFrequency() {

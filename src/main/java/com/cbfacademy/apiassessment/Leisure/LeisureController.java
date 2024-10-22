@@ -30,29 +30,29 @@ public LeisureController (LeisureService leisureService) {
 }
 
 @GetMapping("/{id}")
-    public List<Leisure> getLeisureById(@PathVariable UUID id)throws NoSuchElementException  {
-        return leisureService.findLeisureById(id);
+    public List<Leisure> getLeisure(@PathVariable UUID id)throws NoSuchElementException  {
+        return leisureService.findLeisure(id);
     }
 
 //start
 @GetMapping("entertainment/{id}")
-public List<Leisure> getEntertainmentById(@PathVariable UUID id)throws NoSuchElementException  {
-        return leisureService.findEntertainmentById(id);
+public List<Leisure> getEntertainment(@PathVariable UUID id)throws NoSuchElementException  {
+        return leisureService.findEntertainment(id);
     }
 
 @GetMapping("dining-out/{id}")
-public List<Leisure> getDiningOutById(@PathVariable UUID id)throws NoSuchElementException  {
-        return leisureService.findDiningOutById(id);
+public List<Leisure> getDiningOut(@PathVariable UUID id)throws NoSuchElementException  {
+        return leisureService.findDiningOut(id);
     }
 
 @GetMapping("travel/{id}")
-public List<Leisure> getTravelById(@PathVariable UUID id, @RequestBody Leisure leisure)throws NoSuchElementException  {
-        return leisureService.findTravelById(id);
+public List<Leisure> getTravel(@PathVariable UUID id, @RequestBody Leisure leisure)throws NoSuchElementException  {
+        return leisureService.findTravel(id);
     }
 
 @GetMapping("sports-membership/{id}")
-public List<Leisure> getSportsMembershipById(@PathVariable UUID id, @RequestBody Leisure leisure)throws NoSuchElementException  {
-        return leisureService.findSportsMembershipById(id);
+public List<Leisure> getSportsMembership(@PathVariable UUID id, @RequestBody Leisure leisure)throws NoSuchElementException  {
+        return leisureService.findSportsMembership(id);
     }
 
 

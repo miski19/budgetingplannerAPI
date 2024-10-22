@@ -26,8 +26,8 @@ private UUID id;
 @JoinColumn(name = "user_id", referencedColumnName = "id")
 private User user;
 
-private BigDecimal statePensionById;
-private BigDecimal privatePensionById;
+private BigDecimal statePension;
+private BigDecimal privatePension;
 private String frequency;
 
 //Constructors: default and parameterized
@@ -36,10 +36,10 @@ public Pensions() {
 }
 
 
-public Pensions(User user, BigDecimal statePensionById, BigDecimal privatePensionById, String frequency) {
-    this.user = user;
-    this.statePensionById = statePensionById;
-    this.privatePensionById = privatePensionById;
+public Pensions(UUID id, BigDecimal statePension, BigDecimal privatePension, String frequency) {
+    this.id = id;
+    this.statePension = statePension;
+    this.privatePension = privatePension;
     this.frequency = frequency;
 }
 
@@ -55,23 +55,23 @@ public User getUser(){
 public void setuser (User user) {
     this.user = user;
 }
-public BigDecimal getStatePensionById() {
-    return statePensionById;
+public BigDecimal getStatePension() {
+    return statePension;
 }
 
 
-public void setStatePensionById(BigDecimal statePensionById) {
-    this.statePensionById = statePensionById;
+public void setStatePension(BigDecimal statePension) {
+    this.statePension = statePension;
 }
 
 
-public BigDecimal getPrivatePensionById() {
-    return privatePensionById;
+public BigDecimal getPrivatePension() {
+    return privatePension;
 }
 
 
-public void setPrivatePensionById(BigDecimal privatePensionById) {
-    this.privatePensionById = privatePensionById;
+public void setPrivatePension(BigDecimal privatePension) {
+    this.privatePension = privatePension;
 }
 
 

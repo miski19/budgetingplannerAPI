@@ -29,18 +29,18 @@ public PensionsController(PensionsService pensionsService) {
 }
 
 @GetMapping("/{id}")
-    public List<Pensions> getPensionsById(@PathVariable UUID id) throws NoSuchElementException {
-        return pensionsService.findPensionsById(id);              
+    public List<Pensions> getPensions(@PathVariable UUID id) throws NoSuchElementException {
+        return pensionsService.findPensions(id);              
 }
 
 @GetMapping("state-pensions/{id}")
-    public List<Pensions> getStatePensionById(@PathVariable UUID id) throws NoSuchElementException {
-        return pensionsService.findStatePensionById(id);              
+    public List<Pensions> getStatePension(@PathVariable UUID id) throws NoSuchElementException {
+        return pensionsService.findStatePension(id);              
 }
 
 @GetMapping("private-pensions/{id}")
-    public List<Pensions> getPrivatePensionById(@PathVariable UUID id) throws NoSuchElementException {
-        return pensionsService.findPrivatePensionById(id);              
+    public List<Pensions> getPrivatePension(@PathVariable UUID id) throws NoSuchElementException {
+        return pensionsService.findPrivatePension(id);              
 }
 @GetMapping("frequency/{id}")
 public List<Pensions> getFrequency(@PathVariable UUID id, String frequency) throws NoSuchElementException{

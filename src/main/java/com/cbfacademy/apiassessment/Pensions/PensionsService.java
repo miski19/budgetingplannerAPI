@@ -17,18 +17,18 @@ public PensionsService(PensionsRepository pensionsRepository){
         this.pensionsRepository = pensionsRepository;
 }
 
-public List<Pensions> findPensionsById(UUID id) {
-    return pensionsRepository.findPensionsById(id);
+public List<Pensions> findPensions(UUID id) {
+    return pensionsRepository.findPensions(id);
 }
 
 
-public List<Pensions> findStatePensionById(UUID id) {
-    return pensionsRepository.findStatePensionById(id);
+public List<Pensions> findStatePension(UUID id) {
+    return pensionsRepository.findStatePension(id);
 }
 
 
-public List<Pensions> findPrivatePensionById(UUID id) {
-    return pensionsRepository.findPensionsById(id);
+public List<Pensions> findPrivatePension(UUID id) {
+    return pensionsRepository.findPensions(id);
 }
 
 public List<Pensions> findByFrequency(String frequency) {
@@ -44,8 +44,8 @@ Pensions updatePensions(UUID id, Pensions updatedPensions)
     throws IllegalArgumentException, OptimisticLockingFailureException{
     Pensions pensions = pensionsRepository.findById(id).orElseThrow();
         pensions.setuser(updatedPensions.getUser());
-        pensions.setStatePensionById(updatedPensions.getStatePensionById()!= null ? updatedPensions.getStatePensionById() : BigDecimal.ZERO);
-        pensions.setPrivatePensionById(updatedPensions.getPrivatePensionById()!= null ? updatedPensions.getStatePensionById() : BigDecimal.ZERO);
+        pensions.setStatePension(updatedPensions.getStatePension()!= null ? updatedPensions.getStatePension() : BigDecimal.ZERO);
+        pensions.setPrivatePension(updatedPensions.getPrivatePension()!= null ? updatedPensions.getStatePension() : BigDecimal.ZERO);
         pensions.setFrequency(updatedPensions.getFrequency());
 
 

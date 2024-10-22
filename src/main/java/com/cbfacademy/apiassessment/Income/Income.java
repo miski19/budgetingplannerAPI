@@ -32,10 +32,10 @@ private UUID id;
 
 private User user;
 
-private BigDecimal salaryAfterTaxesById; 
-private BigDecimal selfEmploymentIncomeById;
-private BigDecimal statutorySickPayById;
-private BigDecimal statutoryMaternityPayById;
+private BigDecimal salaryAfterTaxes; 
+private BigDecimal selfEmploymentIncome;
+private BigDecimal statutorySickPay;
+private BigDecimal statutoryMaternityPay;
 private String frequency;
 
 
@@ -44,12 +44,12 @@ public Income(){
 this(null, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, "monthly");
 }
 
-public Income(User user, BigDecimal salaryAfterTaxesById, BigDecimal selfEmploymentIncomeById, BigDecimal statutorySickPayById, BigDecimal statutoryMaternityPayById, String frequency) {
-    this.user = user;
-    this.salaryAfterTaxesById = salaryAfterTaxesById;
-    this.selfEmploymentIncomeById = selfEmploymentIncomeById;
-    this.statutorySickPayById = statutorySickPayById;
-    this.statutoryMaternityPayById = statutoryMaternityPayById;
+public Income(UUID id, BigDecimal salaryAfterTaxes, BigDecimal selfEmploymentIncome, BigDecimal statutorySickPay, BigDecimal statutoryMaternityPay, String frequency) {
+    this.id = id;
+    this.salaryAfterTaxes = salaryAfterTaxes;
+    this.selfEmploymentIncome = selfEmploymentIncome;
+    this.statutorySickPay = statutorySickPay;
+    this.statutoryMaternityPay = statutoryMaternityPay;
     this.frequency = frequency;
 }
 
@@ -66,36 +66,36 @@ public void setUser (User user) {
     this.user = user;
 }
 
-public BigDecimal getSalaryAfterTaxesById() {
-    return salaryAfterTaxesById;
+public BigDecimal getSalaryAfterTaxes() {
+    return salaryAfterTaxes;
 }
 
-public void setSalaryAfterTaxesById (BigDecimal salaryAfterTaxesById) {
-    this.salaryAfterTaxesById = salaryAfterTaxesById;
+public void setSalaryAfterTaxes (BigDecimal salaryAfterTaxes) {
+    this.salaryAfterTaxes = salaryAfterTaxes;
 }
 
-public BigDecimal getSelfEmploymentIncomeById() {
-    return selfEmploymentIncomeById;
+public BigDecimal getSelfEmploymentIncome() {
+    return selfEmploymentIncome;
 }
 
-public void setSelfEmploymentIncomeById(BigDecimal selfEmploymentIncomeById) {
-    this.selfEmploymentIncomeById = selfEmploymentIncomeById;
+public void setSelfEmploymentIncome(BigDecimal selfEmploymentIncome) {
+    this.selfEmploymentIncome = selfEmploymentIncome;
 }
 
-public BigDecimal getStatutorySickPayById() {
-    return statutorySickPayById;
+public BigDecimal getStatutorySickPay() {
+    return statutorySickPay;
 }
 
-public void setStatutorySickPayById(BigDecimal statutorySickPayById) {
-    this.statutorySickPayById = statutorySickPayById;
+public void setStatutorySickPay(BigDecimal statutorySickPay) {
+    this.statutorySickPay = statutorySickPay;
 }
 
-public BigDecimal getStatutoryMaternityPayById() {
-    return statutoryMaternityPayById;
+public BigDecimal getStatutoryMaternityPay() {
+    return statutoryMaternityPay;
 }
 
-public void setStatutoryMaternityPayById(BigDecimal statutoryMaternityPayById) {
-    this.statutoryMaternityPayById = statutoryMaternityPayById;
+public void setStatutoryMaternityPay(BigDecimal statutoryMaternityPay) {
+    this.statutoryMaternityPay = statutoryMaternityPay;
 }
 
 public String getFrequency() {

@@ -91,10 +91,10 @@ LeisureService leisureService, @Lazy UserService userService) {
  
         BigDecimal totalIncome = BigDecimal.ZERO;
 
-        totalIncome = totalIncome.add(calculateIncome(incomeService.findIncomeById(id)));
-        totalIncome = totalIncome.add(calculateBenefitsAndTaxCredits(benefitsAndTaxCreditsService.findBenefitsAndTaxCreditsById(id)));
-        totalIncome = totalIncome.add(calculatePensions(pensionsService.findPensionsById(id)));
-        totalIncome = totalIncome.add(calculateOtherIncome(otherIncomeService.findOtherIncomeById(id)));
+        totalIncome = totalIncome.add(calculateIncome(incomeService.findIncome(id)));
+        totalIncome = totalIncome.add(calculateBenefitsAndTaxCredits(benefitsAndTaxCreditsService.findBenefitsAndTaxCredits(id)));
+        totalIncome = totalIncome.add(calculatePensions(pensionsService.findPensions(id)));
+        totalIncome = totalIncome.add(calculateOtherIncome(otherIncomeService.findOtherIncome(id)));
         
         return totalIncome;
     }
@@ -102,8 +102,8 @@ LeisureService leisureService, @Lazy UserService userService) {
     protected BigDecimal calculateTotalExpenses(UUID id) {
         BigDecimal totalExpenses = BigDecimal.ZERO;
        
-        totalExpenses = totalExpenses.add(calculateBills(billsService.findBillsById(id)));
-        totalExpenses = totalExpenses.add(calculateLeisure(leisureService.findLeisureById(id)));
+        totalExpenses = totalExpenses.add(calculateBills(billsService.findBills(id)));
+        totalExpenses = totalExpenses.add(calculateLeisure(leisureService.findLeisure(id)));
         
         return totalExpenses;
     }
@@ -113,10 +113,10 @@ LeisureService leisureService, @Lazy UserService userService) {
     private BigDecimal calculateIncome(List<Income> incomeList) {
         BigDecimal total = BigDecimal.ZERO;
         for (Income income : incomeList) {
-            BigDecimal amount = income.getSalaryAfterTaxesById()
-                    .add(income.getSelfEmploymentIncomeById())
-                    .add(income.getStatutorySickPayById())
-                    .add(income.getStatutoryMaternityPayById());
+            BigDecimal amount = income.getSalaryAfterTaxes()
+                    .add(income.getSelfEmploymentIncome())
+                    .add(income.getStatutorySickPay())
+                    .add(income.getStatutoryMaternityPay());
 
             // Adjusting amount based on frequency
             if (income.getFrequency().equalsIgnoreCase("annually")) {
@@ -133,17 +133,17 @@ LeisureService leisureService, @Lazy UserService userService) {
     private BigDecimal calculateBenefitsAndTaxCredits(List<BenefitsAndTaxCredits> benefitsList) {
         BigDecimal total = BigDecimal.ZERO;
         for (BenefitsAndTaxCredits benefitsAndTaxCredits : benefitsList) {
-            BigDecimal amount = benefitsAndTaxCredits.getJobSeekersAllowanceById()
-                    .add(benefitsAndTaxCredits.getWorkingTaxCreditById())
-                    .add(benefitsAndTaxCredits.getChildTaxCreditById())
-                    .add(benefitsAndTaxCredits.getChildBenefitById())
-                    .add(benefitsAndTaxCredits.getEmploymentSupportAllowanceById())
-                    .add(benefitsAndTaxCredits.getUniversalCreditById())
-                    .add(benefitsAndTaxCredits.getDisabilityAllowanceById())
-                    .add(benefitsAndTaxCredits.getAttendanceAllowanceById())
-                    .add(benefitsAndTaxCredits.getCarersAllowanceById())
-                    .add(benefitsAndTaxCredits.getHousingBenefitById())
-                    .add(benefitsAndTaxCredits.getMaternityAllowanceById());
+            BigDecimal amount = benefitsAndTaxCredits.getJobSeekersAllowance()
+                    .add(benefitsAndTaxCredits.getWorkingTaxCredit())
+                    .add(benefitsAndTaxCredits.getChildTaxCredit())
+                    .add(benefitsAndTaxCredits.getChildBenefit())
+                    .add(benefitsAndTaxCredits.getEmploymentSupportAllowance())
+                    .add(benefitsAndTaxCredits.getUniversalCredit())
+                    .add(benefitsAndTaxCredits.getDisabilityAllowance())
+                    .add(benefitsAndTaxCredits.getAttendanceAllowance())
+                    .add(benefitsAndTaxCredits.getCarersAllowance())
+                    .add(benefitsAndTaxCredits.getHousingBenefit())
+                    .add(benefitsAndTaxCredits.getMaternityAllowance());
                    
 
             // Adjusting amount based on frequency
@@ -161,8 +161,8 @@ LeisureService leisureService, @Lazy UserService userService) {
     private BigDecimal calculatePensions(List<Pensions> pensionsList) {
         BigDecimal total = BigDecimal.ZERO;
         for (Pensions pensions : pensionsList) {
-            BigDecimal amount = pensions.getStatePensionById()
-                    .add(pensions.getPrivatePensionById());
+            BigDecimal amount = pensions.getStatePension()
+                    .add(pensions.getPrivatePension());
 
             // Adjusting amount based on frequency
             if (pensions.getFrequency().equalsIgnoreCase("annually")) {
@@ -179,8 +179,8 @@ LeisureService leisureService, @Lazy UserService userService) {
     private BigDecimal calculateOtherIncome(List<OtherIncome> otherIncomeList) {
         BigDecimal total = BigDecimal.ZERO;
         for (OtherIncome otherIncome : otherIncomeList) {
-            BigDecimal amount = otherIncome.getRentalIncomeById()
-                    .add(otherIncome.getInvestmentIncomeById());
+            BigDecimal amount = otherIncome.getRentalIncome()
+                    .add(otherIncome.getInvestmentIncome());
 
             // Adjusting amount based on frequency
             if (otherIncome.getFrequency().equalsIgnoreCase("annually")) {
@@ -197,13 +197,13 @@ LeisureService leisureService, @Lazy UserService userService) {
     private BigDecimal calculateBills (List<Bills> billsList) {
         BigDecimal total = BigDecimal.ZERO;
         for (Bills bills : billsList) {
-            BigDecimal amount = bills.getRentById()
-                    .add(bills.getMortgageById())
-                    .add(bills.getMortgageEndowmentById())
-                    .add(bills.getCouncilTaxById())
-                    .add(bills.getInsuranceById())
-                    .add(bills.getUtilitiesById())
-                    .add(bills.getGroceriesById());
+            BigDecimal amount = bills.getRent()
+                    .add(bills.getMortgage())
+                    .add(bills.getMortgageEndowment())
+                    .add(bills.getCouncilTax())
+                    .add(bills.getInsurance())
+                    .add(bills.getUtilities())
+                    .add(bills.getGroceries());
 
             // Adjusting amount based on frequency
             if (bills.getFrequency().equalsIgnoreCase("annually")) {
@@ -220,10 +220,10 @@ LeisureService leisureService, @Lazy UserService userService) {
     private BigDecimal calculateLeisure(List<Leisure> leisureList) {
         BigDecimal total = BigDecimal.ZERO;
         for (Leisure leisures : leisureList) {
-            BigDecimal amount = leisures.getEntertainmentById()
-                    .add(leisures.getDiningOutById())
-                    .add(leisures.getTravelById())
-                    .add(leisures.getSportsMembershipById());
+            BigDecimal amount = leisures.getEntertainment()
+                    .add(leisures.getDiningOut())
+                    .add(leisures.getTravel())
+                    .add(leisures.getSportsMembership());
 
             // Adjusting amount based on frequency
             if (leisures.getFrequency().equalsIgnoreCase("annually")) {
@@ -279,27 +279,3 @@ LeisureService leisureService, @Lazy UserService userService) {
 
 
 
- // 1# BigDecimal totalIncome = calculateTotalIncome(id);
-    // BigDecimal totalExpenses = calculateTotalExpenses(id);
-   
-    // BigDecimal tenPercentSavings = calculatePercentageOfSavings(totalIncome, totalExpenses, BigDecimal.valueOf(10));
-    // BigDecimal fifteenPercentSavings = calculatePercentageOfSavings(totalIncome, totalExpenses, BigDecimal.valueOf(15));
-    // BigDecimal recommendedTwentyPercentSavings = calculatePercentageOfSavings(totalIncome, totalExpenses, BigDecimal.valueOf(20));
-
-    // percentages.add(tenPercentSavings);
-    // percentages.add(fifteenPercentSavings);
-    // percentages.add(recommendedTwentyPercentSavings);
-
-
-    //  2# public BigDecimal calculateSavingsByUsersPercentage(UUID id,Optional<User> optionalUser, BigDecimal userPercentage) {
-        
-    //     BigDecimal totalIncome = calculateTotalIncome(id);
-    //     BigDecimal totalExpenses = calculateTotalExpenses(id);
-    //     BigDecimal savings = calculateSavings(totalIncome, totalExpenses);
-   
-
-    //     return savings.multiply(userPercentage).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
-    
-    // }
-
-    // methods to sum up amounts from lists

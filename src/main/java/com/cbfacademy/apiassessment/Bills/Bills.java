@@ -27,13 +27,13 @@ private UUID id;
 @JoinColumn(name = "user_id", referencedColumnName = "id")
 private User user;
 
-private BigDecimal rentById;
-private BigDecimal mortgageById; 
-private BigDecimal mortgageEndowmentById;
-private BigDecimal councilTaxById;
-private BigDecimal insuranceById;
-private BigDecimal utilitiesById;
-private BigDecimal groceriesById;
+private BigDecimal rent;
+private BigDecimal mortgage; 
+private BigDecimal mortgageEndowment;
+private BigDecimal councilTax;
+private BigDecimal insurance;
+private BigDecimal utilities;
+private BigDecimal groceries;
 private String frequency;
 
 
@@ -43,16 +43,16 @@ public Bills() {
          BigDecimal.ZERO, "monthly");
 }
 
-public Bills(User user, BigDecimal rentById, BigDecimal mortgageById, BigDecimal mortgageEndowmentById, BigDecimal councilTaxById,
-        BigDecimal insuranceById, BigDecimal utilitiesById, BigDecimal groceriesById, String frequency) {
-    this.user = user;
-    this.rentById = rentById;
-    this.mortgageById = mortgageById;
-    this.mortgageEndowmentById = mortgageEndowmentById;
-    this.councilTaxById = councilTaxById;
-    this.insuranceById = insuranceById;
-    this.utilitiesById = utilitiesById;
-    this.groceriesById = groceriesById;
+public Bills(UUID id, BigDecimal rent, BigDecimal mortgage, BigDecimal mortgageEndowment, BigDecimal councilTax,
+        BigDecimal insurance, BigDecimal utilities, BigDecimal groceries, String frequency) {
+    this.id = id;
+    this.rent = rent;
+    this.mortgage = mortgage;
+    this.mortgageEndowment = mortgageEndowment;
+    this.councilTax = councilTax;
+    this.insurance = insurance;
+    this.utilities = utilities;
+    this.groceries = groceries;
     this.frequency = frequency;
 }
 
@@ -68,60 +68,60 @@ public User getUser(){
 public void setuser (User user) {
     this.user = user;
 }
-public BigDecimal getRentById() {
-    return rentById;
+public BigDecimal getRent() {
+    return rent;
 }
 
-public void setRentById(BigDecimal rentById) {
-    this.rentById = rentById;
+public void setRent(BigDecimal rent) {
+    this.rent = rent;
 }
 
-public BigDecimal getMortgageById() {
-    return mortgageById;
+public BigDecimal getMortgage() {
+    return mortgage;
 }
 
-public void setMortgageById(BigDecimal mortgageById) {
-    this.mortgageById = mortgageById;
+public void setMortgage(BigDecimal mortgage) {
+    this.mortgage = mortgage;
 }
 
-public BigDecimal getMortgageEndowmentById() {
-    return mortgageEndowmentById;
+public BigDecimal getMortgageEndowment() {
+    return mortgageEndowment;
 }
 
-public void setMortgageEndowmentById(BigDecimal mortgageEndowmentById) {
-    this.mortgageEndowmentById = mortgageEndowmentById;
+public void setMortgageEndowment(BigDecimal mortgageEndowment) {
+    this.mortgageEndowment = mortgageEndowment;
 }
 
-public BigDecimal getCouncilTaxById() {
-    return councilTaxById;
+public BigDecimal getCouncilTax() {
+    return councilTax;
 }
 
-public void setCouncilTaxById(BigDecimal councilTaxById) {
-    this.councilTaxById = councilTaxById;
+public void setCouncilTax(BigDecimal councilTax) {
+    this.councilTax= councilTax;
 }
 
-public BigDecimal getInsuranceById() {
-    return insuranceById;
+public BigDecimal getInsurance() {
+    return insurance;
 }
 
-public void setInsuranceById(BigDecimal insuranceById) {
-    this.insuranceById = insuranceById;
+public void setInsurance(BigDecimal insurance) {
+    this.insurance = insurance;
 }
 
-public BigDecimal getUtilitiesById() {
-    return utilitiesById;
+public BigDecimal getUtilities() {
+    return utilities;
 }
 
-public void setUtilitiesById(BigDecimal utilitiesById) {
-    this.utilitiesById = utilitiesById;
+public void setUtilities(BigDecimal utilities) {
+    this.utilities = utilities;
 }
 
-public BigDecimal getGroceriesById() {
-    return groceriesById;
+public BigDecimal getGroceries() {
+    return groceries;
 }
 
-public void setGroceriesById(BigDecimal groceriesById) {
-    this.groceriesById = groceriesById;
+public void setGroceries(BigDecimal groceries) {
+    this.groceries = groceries;
 }
 
 public String getFrequency() {

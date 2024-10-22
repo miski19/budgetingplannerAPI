@@ -20,36 +20,36 @@ public BillsService(BillsRepository billsRepository) {
     this.billsRepository = billsRepository;
 }
 
-public List<Bills> findBillsById(UUID id) throws NoSuchElementException  {
-    return billsRepository.findBillsById(id);
+public List<Bills> findBills(UUID id) throws NoSuchElementException  {
+    return billsRepository.findBills(id);
 }
 
-public List<Bills> findRentById(UUID id) {
-    return billsRepository.findRentById(id);
+public List<Bills> findRent(UUID id) {
+    return billsRepository.findRent(id);
 }
 // start
-public List<Bills> findMortgageById(UUID id) {
-    return billsRepository.findMortgageById(id);
+public List<Bills> findMortgage(UUID id) {
+    return billsRepository.findMortgage(id);
 }
 
-public List<Bills> findMortgageEndowmentById(UUID id) {
-    return billsRepository.findMortgageEndowmentById(id);
+public List<Bills> findMortgageEndowment(UUID id) {
+    return billsRepository.findMortgageEndowment(id);
 }
 
-public List<Bills> findCouncilTaxById(UUID id) {
-    return billsRepository.findCouncilTaxById(id);
+public List<Bills> findCouncilTax(UUID id) {
+    return billsRepository.findCouncilTax(id);
 }
 
-public List<Bills> findInsuranceById(UUID id) {
-    return billsRepository.findInsuranceById(id);
+public List<Bills> findInsurance(UUID id) {
+    return billsRepository.findInsurance(id);
 }
 
-public List<Bills> findUtilitiesById(UUID id) {
-    return billsRepository.findUtilitiesById(id);
+public List<Bills> findUtilities(UUID id) {
+    return billsRepository.findUtilities(id);
 }
 
-public List<Bills> findGroceriesById(UUID id) {
-    return billsRepository.findGroceriesById(id);
+public List<Bills> findGroceries(UUID id) {
+    return billsRepository.findGroceries(id);
 }
 
 public List<Bills> findByFrequency(String frequency) {
@@ -68,13 +68,13 @@ Bills updateBills(UUID id, Bills updatedBills)
     Bills bills = billsRepository.findById(id).orElseThrow();
 
     bills.setuser(updatedBills.getUser());
-    bills.setRentById(updatedBills.getRentById()!= null ? updatedBills.getRentById() : BigDecimal.ZERO);
-    bills.setMortgageById(updatedBills.getMortgageById()!= null ? updatedBills.getMortgageById() : BigDecimal.ZERO);
-    bills.setMortgageEndowmentById(updatedBills.getMortgageEndowmentById()!= null ? updatedBills.getMortgageEndowmentById() : BigDecimal.ZERO);
-    bills.setCouncilTaxById(updatedBills.getCouncilTaxById()!= null ? updatedBills.getCouncilTaxById() : BigDecimal.ZERO);
-    bills.setInsuranceById(updatedBills.getInsuranceById()!= null ? updatedBills.getInsuranceById() : BigDecimal.ZERO);
-    bills.setUtilitiesById(updatedBills.getUtilitiesById()!= null ? updatedBills.getUtilitiesById() : BigDecimal.ZERO);
-    bills.setGroceriesById(updatedBills.getGroceriesById()!= null ? updatedBills.getGroceriesById() : BigDecimal.ZERO);
+    bills.setRent(updatedBills.getRent()!= null ? updatedBills.getRent() : BigDecimal.ZERO);
+    bills.setMortgage(updatedBills.getMortgage()!= null ? updatedBills.getMortgage() : BigDecimal.ZERO);
+    bills.setMortgageEndowment(updatedBills.getMortgageEndowment()!= null ? updatedBills.getMortgageEndowment() : BigDecimal.ZERO);
+    bills.setCouncilTax(updatedBills.getCouncilTax()!= null ? updatedBills.getCouncilTax() : BigDecimal.ZERO);
+    bills.setInsurance(updatedBills.getInsurance()!= null ? updatedBills.getInsurance() : BigDecimal.ZERO);
+    bills.setUtilities(updatedBills.getUtilities()!= null ? updatedBills.getUtilities() : BigDecimal.ZERO);
+    bills.setGroceries(updatedBills.getGroceries()!= null ? updatedBills.getGroceries() : BigDecimal.ZERO);
     bills.setFrequency(updatedBills.getFrequency());
 
     return billsRepository.save(updatedBills);

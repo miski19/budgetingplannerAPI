@@ -17,24 +17,24 @@ public IncomeService(IncomeRepository incomeRepository) {
     this.incomeRepository = incomeRepository;
 }
 
-public List<Income> findIncomeById(UUID id) throws NoSuchElementException {
-    return incomeRepository.findIncomeById(id);
+public List<Income> findIncome(UUID id) throws NoSuchElementException {
+    return incomeRepository.findIncome(id);
 }
 
-public List<Income> findSalaryAfterTaxesById(UUID id)throws NoSuchElementException {
-    return incomeRepository.findSalaryAfterTaxesById(id);
+public List<Income> findSalaryAfterTaxes(UUID id)throws NoSuchElementException {
+    return incomeRepository.findSalaryAfterTaxes(id);
 }
 
-public List<Income> findSelfEmploymentIncomeById(UUID id)throws NoSuchElementException {
-    return incomeRepository.findSelfEmploymentIncomeById(id);
+public List<Income> findSelfEmploymentIncome(UUID id)throws NoSuchElementException {
+    return incomeRepository.findSelfEmploymentIncome(id);
 }
 
-public List<Income>findStatutorySickPayById(UUID id)throws NoSuchElementException {
-    return incomeRepository.findStatutorySickPayById(id);
+public List<Income>findStatutorySickPay(UUID id)throws NoSuchElementException {
+    return incomeRepository.findStatutorySickPay(id);
 }
 
-public List<Income> findStatutoryMaternityPayById(UUID id)throws NoSuchElementException {
-    return incomeRepository.findStatutoryMaternityPayById(id);
+public List<Income> findStatutoryMaternityPay(UUID id)throws NoSuchElementException {
+    return incomeRepository.findStatutoryMaternityPay(id);
 }
 
 
@@ -50,10 +50,10 @@ throws IllegalArgumentException, OptimisticLockingFailureException{
 Income updateIncome(UUID id, Income updatedIncome) throws NoSuchElementException, IllegalArgumentException{
    
     updatedIncome.setUser(updatedIncome.getUser());
-    updatedIncome.setSalaryAfterTaxesById(updatedIncome.getSalaryAfterTaxesById()!= null ? updatedIncome.getSalaryAfterTaxesById() : BigDecimal.ZERO);
-    updatedIncome.setSelfEmploymentIncomeById(updatedIncome.getSelfEmploymentIncomeById()!= null ? updatedIncome.getSelfEmploymentIncomeById() : BigDecimal.ZERO);
-    updatedIncome.setStatutorySickPayById(updatedIncome.getStatutorySickPayById()!= null ? updatedIncome.getStatutorySickPayById() : BigDecimal.ZERO);
-    updatedIncome.setStatutoryMaternityPayById(updatedIncome.getStatutoryMaternityPayById()!= null ? updatedIncome.getStatutoryMaternityPayById() : BigDecimal.ZERO);
+    updatedIncome.setSalaryAfterTaxes(updatedIncome.getSalaryAfterTaxes()!= null ? updatedIncome.getSalaryAfterTaxes() : BigDecimal.ZERO);
+    updatedIncome.setSelfEmploymentIncome(updatedIncome.getSelfEmploymentIncome()!= null ? updatedIncome.getSelfEmploymentIncome() : BigDecimal.ZERO);
+    updatedIncome.setStatutorySickPay(updatedIncome.getStatutorySickPay()!= null ? updatedIncome.getStatutorySickPay() : BigDecimal.ZERO);
+    updatedIncome.setStatutoryMaternityPay(updatedIncome.getStatutoryMaternityPay()!= null ? updatedIncome.getStatutoryMaternityPay() : BigDecimal.ZERO);
     updatedIncome.setFrequency(updatedIncome.getFrequency());
 
     return incomeRepository.save(updatedIncome);

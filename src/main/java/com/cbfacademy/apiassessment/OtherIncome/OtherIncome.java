@@ -26,8 +26,8 @@ private UUID id;
 @JoinColumn(name = "user_id", referencedColumnName = "id")
 private User user;
 
-private BigDecimal rentalIncomeById;
-private BigDecimal investmentIncomeById;
+private BigDecimal rentalIncome;
+private BigDecimal investmentIncome;
 private String frequency;
 
 //Constructors: default and parameterized
@@ -36,10 +36,10 @@ this(null, BigDecimal.ZERO, BigDecimal.ZERO, "monthly");
 }
 
 
-public OtherIncome(User user, BigDecimal rentalIncomeById, BigDecimal investmentIncomeById, String frequency) {
-    this.user = user;
-    this.rentalIncomeById = rentalIncomeById;
-    this.investmentIncomeById = investmentIncomeById;
+public OtherIncome(UUID id, BigDecimal rentalIncome, BigDecimal investmentIncome, String frequency) {
+    this.id = id;
+    this.rentalIncome = rentalIncome;
+    this.investmentIncome = investmentIncome;
     this.frequency = frequency;
 }
 
@@ -56,23 +56,23 @@ public void setuser (User user) {
     this.user = user;
 }
 
-public BigDecimal getRentalIncomeById() {
-    return rentalIncomeById;
+public BigDecimal getRentalIncome() {
+    return rentalIncome;
 }
 
 
-public void setRentalIncomeById(BigDecimal rentalIncomeById) {
-    this.rentalIncomeById = rentalIncomeById;
+public void setRentalIncome(BigDecimal rentalIncome) {
+    this.rentalIncome = rentalIncome;
 }
 
 
-public BigDecimal getInvestmentIncomeById() {
-    return investmentIncomeById;
+public BigDecimal getInvestmentIncome() {
+    return investmentIncome;
 }
 
 
-public void setInvestmentIncomeById(BigDecimal investmentIncomeById) {
-    this.investmentIncomeById = investmentIncomeById;
+public void setInvestmentIncome(BigDecimal investmentIncome) {
+    this.investmentIncome = investmentIncome;
 }
 
 

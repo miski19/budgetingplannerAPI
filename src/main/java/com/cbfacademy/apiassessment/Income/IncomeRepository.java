@@ -14,10 +14,10 @@ public interface IncomeRepository extends ListCrudRepository<Income, UUID>{
 
  
  List<User> searchById(UUID id);
- List<Income> findIncomeById(UUID id);
- List<Income> findSalaryAfterTaxesById(UUID id);
- List<Income> findSelfEmploymentIncomeById(UUID id);
- List<Income>findStatutorySickPayById(UUID id);
- List<Income> findStatutoryMaternityPayById(UUID id);
+ List<Income> findIncome(UUID id);
+ List<Income> findSalaryAfterTaxes(UUID id);
+ List<Income> findSelfEmploymentIncome(UUID id);
+ List<Income>findStatutorySickPay(UUID id);
+ List<Income> findStatutoryMaternityPay(UUID id);
  List<Income> findByFrequency(String frequency);
 }
