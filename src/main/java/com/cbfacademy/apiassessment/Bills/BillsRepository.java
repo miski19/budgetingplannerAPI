@@ -13,14 +13,14 @@ public interface BillsRepository extends ListCrudRepository<Bills, UUID> {
 
 
 List<User> searchById(UUID id);;
-List<Bills> findBillsById(UUID id);
-List<Bills> findRentById(UUID id);
-List<Bills> findMortgageById(UUID id);
-List<Bills> findMortgageEndowmentById(UUID id);
-List<Bills> findCouncilTaxById(UUID id);
-List<Bills> findInsuranceById(UUID id);
-List<Bills> findUtilitiesById(UUID id);
-List<Bills> findGroceriesById(UUID id);
+List<Bills> findBills(UUID id);
+List<Bills> findRent(UUID id);
+List<Bills> findMortgage(UUID id);
+List<Bills> findMortgageEndowment(UUID id);
+List<Bills> findCouncilTax(UUID id);
+List<Bills> findInsurance(UUID id);
+List<Bills> findUtilities(UUID id);
+List<Bills> findGroceries(UUID id);
 List<Bills> findByFrequency(String frequency);
 
 

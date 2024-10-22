@@ -19,24 +19,24 @@ public LeisureService(LeisureRepository leisureRepository){
         this.leisureRepository = leisureRepository;
 }
 
-public List<Leisure> findLeisureById(UUID id) {
-    return leisureRepository.findLeisureById(id);
+public List<Leisure> findLeisure(UUID id) {
+    return leisureRepository.findLeisure(id);
 }
 
-public List<Leisure> findEntertainmentById(UUID id) {
-    return leisureRepository.findEntertainmentById(id);
+public List<Leisure> findEntertainment(UUID id) {
+    return leisureRepository.findEntertainment(id);
 }
 
-public List<Leisure> findDiningOutById(UUID id) {
-    return leisureRepository.findDiningOutById(id);
+public List<Leisure> findDiningOut(UUID id) {
+    return leisureRepository.findDiningOut(id);
 }
 
-public List<Leisure> findTravelById(UUID id) {
-    return leisureRepository.findTravelById(id);
+public List<Leisure> findTravel(UUID id) {
+    return leisureRepository.findTravel(id);
 }
 
-public List<Leisure> findSportsMembershipById(UUID id) {
-    return leisureRepository.findSportsMembershipById(id);
+public List<Leisure> findSportsMembership(UUID id) {
+    return leisureRepository.findSportsMembership(id);
 }
 
 public List<Leisure> findByFrequency(String frequency) {
@@ -53,14 +53,14 @@ Leisure updateLeisure(UUID id, Leisure updatedLeisure)
     Leisure leisure = leisureRepository.findById(id).orElseThrow();
 
     leisure.setuser(updatedLeisure.getUser());  
-    leisure.setDiningOutById(updatedLeisure.getDiningOutById()!= null ? updatedLeisure.getDiningOutById() : BigDecimal.ZERO);
-    leisure.setTravelById(updatedLeisure.getTravelById()!= null ? updatedLeisure.getTravelById() : BigDecimal.ZERO);
-    leisure.setSportsMembershipById(updatedLeisure.getSportsMembershipById()!= null ? updatedLeisure.getSportsMembershipById() : BigDecimal.ZERO);
+    leisure.setDiningOut(updatedLeisure.getDiningOut()!= null ? updatedLeisure.getDiningOut() : BigDecimal.ZERO);
+    leisure.setTravel(updatedLeisure.getTravel()!= null ? updatedLeisure.getTravel() : BigDecimal.ZERO);
+    leisure.setSportsMembership(updatedLeisure.getSportsMembership()!= null ? updatedLeisure.getSportsMembership() : BigDecimal.ZERO);
     leisure.setFrequency(updatedLeisure.getFrequency());
 
 return leisureRepository.save(updatedLeisure);
 
-// }).orElseThrow(() -> new NoSuchElementException("Leisure Not Found"));
+
 }
 
 public void deleteLeisureById(UUID id){

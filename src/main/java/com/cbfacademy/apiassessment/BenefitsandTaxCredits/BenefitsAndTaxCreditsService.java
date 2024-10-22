@@ -17,51 +17,51 @@ public BenefitsAndTaxCreditsService(BenefitsAndTaxCreditsRepository benefitsAndT
     this.benefitsAndTaxCreditsRepository = benefitsAndTaxCreditsRepository;
 }
 
-public List<BenefitsAndTaxCredits> findBenefitsAndTaxCreditsById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findBenefitsAndTaxCreditsById(id);
+public List<BenefitsAndTaxCredits> findBenefitsAndTaxCredits(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findBenefitsAndTaxCredits(id);
 }
 
-public List<BenefitsAndTaxCredits> findJobSeekersAllowanceById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findCarersAllowanceById(id);
+public List<BenefitsAndTaxCredits> findJobSeekersAllowance(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findCarersAllowance(id);
 }
 
-public List<BenefitsAndTaxCredits> findWorkingTaxCreditById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findWorkingTaxCreditById(id);
+public List<BenefitsAndTaxCredits> findWorkingTaxCredit(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findWorkingTaxCredit(id);
 }
 
-public List<BenefitsAndTaxCredits> findChildTaxCreditById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findChildTaxCreditById(id);
+public List<BenefitsAndTaxCredits> findChildTaxCredit(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findChildTaxCredit(id);
 }
 
-public List<BenefitsAndTaxCredits> findChildBenefitById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findChildBenefitById(id);
+public List<BenefitsAndTaxCredits> findChildBenefit(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findChildBenefit(id);
 }
 
-public List<BenefitsAndTaxCredits> findEmploymentSupportAllowanceById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findEmploymentSupportAllowanceById(id);
+public List<BenefitsAndTaxCredits> findEmploymentSupportAllowance(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findEmploymentSupportAllowance(id);
 }
 
-public List<BenefitsAndTaxCredits> findUniversalCreditById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findUniversalCreditById(id);
+public List<BenefitsAndTaxCredits> findUniversalCredit(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findUniversalCredit(id);
 }
-public List<BenefitsAndTaxCredits> findDisabilityAllowanceById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findDisabilityAllowanceById(id);
-}
-
-public List<BenefitsAndTaxCredits> findAttendanceAllowanceById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findAttendanceAllowanceById(id);
+public List<BenefitsAndTaxCredits> findDisabilityAllowance(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findDisabilityAllowance(id);
 }
 
-public List<BenefitsAndTaxCredits> findCarersAllowanceById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findCarersAllowanceById(id);
+public List<BenefitsAndTaxCredits> findAttendanceAllowance(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findAttendanceAllowance(id);
 }
 
-public List<BenefitsAndTaxCredits> findHousingBenefitById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findHousingBenefitById(id);
+public List<BenefitsAndTaxCredits> findCarersAllowance(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findCarersAllowance(id);
 }
 
-public List<BenefitsAndTaxCredits> findMaternityAllowanceById(UUID id) throws NoSuchElementException{
-    return benefitsAndTaxCreditsRepository.findMaternityAllowanceById(id);
+public List<BenefitsAndTaxCredits> findHousingBenefit(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findHousingBenefit(id);
+}
+
+public List<BenefitsAndTaxCredits> findMaternityAllowance(UUID id) throws NoSuchElementException{
+    return benefitsAndTaxCreditsRepository.findMaternityAllowance(id);
 }
 
 public List<BenefitsAndTaxCredits> findFrequency(String frequency) throws NoSuchElementException{
@@ -78,25 +78,25 @@ throws NoSuchElementException, IllegalArgumentException{
     BenefitsAndTaxCredits benefitsAndTaxCredits = benefitsAndTaxCreditsRepository.findById(id).orElseThrow();
     
     benefitsAndTaxCredits.setuser(updatedBenefitsAndTaxCredits.getUser());
-    benefitsAndTaxCredits.setJobSeekersAllowanceById(updatedBenefitsAndTaxCredits.getJobSeekersAllowanceById()!= null ? updatedBenefitsAndTaxCredits.getJobSeekersAllowanceById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setWorkingTaxCreditById(updatedBenefitsAndTaxCredits.getWorkingTaxCreditById()!= null ? updatedBenefitsAndTaxCredits.getWorkingTaxCreditById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setChildTaxCreditById(updatedBenefitsAndTaxCredits.getChildTaxCreditById()!= null ? updatedBenefitsAndTaxCredits.getChildTaxCreditById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setChildBenefitById(updatedBenefitsAndTaxCredits.getChildBenefitById()!= null ? updatedBenefitsAndTaxCredits.getChildBenefitById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setEmploymentSupportAllowanceById(updatedBenefitsAndTaxCredits.getEmploymentSupportAllowanceById()!= null ? updatedBenefitsAndTaxCredits.getEmploymentSupportAllowanceById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setUniversalCreditById(updatedBenefitsAndTaxCredits.getUniversalCreditById()!= null ? updatedBenefitsAndTaxCredits.getUniversalCreditById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setDisabilityAllowanceById(updatedBenefitsAndTaxCredits.getDisabilityAllowanceById()!= null ? updatedBenefitsAndTaxCredits.getDisabilityAllowanceById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setAttendanceAllowanceById(updatedBenefitsAndTaxCredits.getAttendanceAllowanceById()!= null ? updatedBenefitsAndTaxCredits.getAttendanceAllowanceById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setCarersAllowanceById(updatedBenefitsAndTaxCredits.getCarersAllowanceById()!= null ? updatedBenefitsAndTaxCredits.getCarersAllowanceById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setHousingBenefitbyId(updatedBenefitsAndTaxCredits.getHousingBenefitById()!= null ? updatedBenefitsAndTaxCredits.getHousingBenefitById() : BigDecimal.ZERO);
-    benefitsAndTaxCredits.setMaternityAllowanceById(updatedBenefitsAndTaxCredits.getMaternityAllowanceById()!= null ? updatedBenefitsAndTaxCredits.getMaternityAllowanceById() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setJobSeekersAllowance(updatedBenefitsAndTaxCredits.getJobSeekersAllowance()!= null ? updatedBenefitsAndTaxCredits.getJobSeekersAllowance() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setWorkingTaxCredit(updatedBenefitsAndTaxCredits.getWorkingTaxCredit()!= null ? updatedBenefitsAndTaxCredits.getWorkingTaxCredit() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setChildTaxCredit(updatedBenefitsAndTaxCredits.getChildTaxCredit()!= null ? updatedBenefitsAndTaxCredits.getChildTaxCredit() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setChildBenefit(updatedBenefitsAndTaxCredits.getChildBenefit()!= null ? updatedBenefitsAndTaxCredits.getChildBenefit() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setEmploymentSupportAllowance(updatedBenefitsAndTaxCredits.getEmploymentSupportAllowance()!= null ? updatedBenefitsAndTaxCredits.getEmploymentSupportAllowance() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setUniversalCredit(updatedBenefitsAndTaxCredits.getUniversalCredit()!= null ? updatedBenefitsAndTaxCredits.getUniversalCredit() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setDisabilityAllowance(updatedBenefitsAndTaxCredits.getDisabilityAllowance()!= null ? updatedBenefitsAndTaxCredits.getDisabilityAllowance() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setAttendanceAllowance(updatedBenefitsAndTaxCredits.getAttendanceAllowance()!= null ? updatedBenefitsAndTaxCredits.getAttendanceAllowance() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setCarersAllowance(updatedBenefitsAndTaxCredits.getCarersAllowance()!= null ? updatedBenefitsAndTaxCredits.getCarersAllowance() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setHousingBenefit(updatedBenefitsAndTaxCredits.getHousingBenefit()!= null ? updatedBenefitsAndTaxCredits.getHousingBenefit() : BigDecimal.ZERO);
+    benefitsAndTaxCredits.setMaternityAllowance(updatedBenefitsAndTaxCredits.getMaternityAllowance()!= null ? updatedBenefitsAndTaxCredits.getMaternityAllowance() : BigDecimal.ZERO);
     benefitsAndTaxCredits.setFrequency(updatedBenefitsAndTaxCredits.getFrequency());
     
     return benefitsAndTaxCreditsRepository.save(updatedBenefitsAndTaxCredits);
+}
      
-        // }).orElseThrow(() -> new NoSuchElementException("Benefit Not Found"));
-    }
+        
     
-public void deleteBenefitsAndTaxCreditsById(UUID id){
+public void deleteBenefitsAndTaxCredits(UUID id){
     if(!benefitsAndTaxCreditsRepository.existsById(id)){
         throw new NoSuchElementException("Benefit Not Found");
     }

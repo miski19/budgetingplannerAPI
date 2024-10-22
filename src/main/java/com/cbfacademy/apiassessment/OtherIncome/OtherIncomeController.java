@@ -27,18 +27,18 @@ public OtherIncomeController(OtherIncomeService otherIncomeService) {
 }
 
 @GetMapping("/other-income/{id}")
-    public List<OtherIncome> getOtherIncomeById(@PathVariable UUID id) throws NoSuchElementException {
-        return otherIncomeService.findOtherIncomeById(id);            
+    public List<OtherIncome> getOtherIncome(@PathVariable UUID id) throws NoSuchElementException {
+        return otherIncomeService.findOtherIncome(id);            
 }
 
 @GetMapping("/rental-income/{id}")
-    public List<OtherIncome> getRentalIncomeById(@PathVariable UUID id) throws NoSuchElementException {
-        return otherIncomeService.findRentalIncomeById(id);            
+    public List<OtherIncome> getRentalIncome(@PathVariable UUID id) throws NoSuchElementException {
+        return otherIncomeService.findRentalIncome(id);            
 }
 
 @GetMapping("investment-income/{id}")
-    public List<OtherIncome> getInvestmentIncomeById(@PathVariable UUID id) throws NoSuchElementException {
-        return otherIncomeService.findInvestmentIncomeById(id);            
+    public List<OtherIncome> getInvestmentIncome(@PathVariable UUID id) throws NoSuchElementException {
+        return otherIncomeService.findInvestmentIncome(id);            
 }
 
 @GetMapping("frequency/{id}")

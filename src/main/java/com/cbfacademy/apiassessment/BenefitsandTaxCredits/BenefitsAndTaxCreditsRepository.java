@@ -12,17 +12,18 @@ import com.cbfacademy.apiassessment.User.User;
 public interface BenefitsAndTaxCreditsRepository extends ListCrudRepository<BenefitsAndTaxCredits, UUID> {
 
 List<User> searchById(UUID id);
-List<BenefitsAndTaxCredits> findBenefitsAndTaxCreditsById(UUID id);
-List<BenefitsAndTaxCredits> findJobSeekersAllowanceById(UUID id);
-List<BenefitsAndTaxCredits> findWorkingTaxCreditById(UUID id);
-List<BenefitsAndTaxCredits> findChildTaxCreditById(UUID id);
-List<BenefitsAndTaxCredits> findChildBenefitById(UUID id);
-List<BenefitsAndTaxCredits> findEmploymentSupportAllowanceById(UUID id);
-List<BenefitsAndTaxCredits> findUniversalCreditById(UUID id);
-List<BenefitsAndTaxCredits> findDisabilityAllowanceById(UUID id);
-List<BenefitsAndTaxCredits> findAttendanceAllowanceById(UUID id);
-List<BenefitsAndTaxCredits> findCarersAllowanceById(UUID id);
-List<BenefitsAndTaxCredits> findHousingBenefitById(UUID id);
-List<BenefitsAndTaxCredits> findMaternityAllowanceById(UUID id);
+List<BenefitsAndTaxCredits> findBenefitsAndTaxCredits(UUID id);
+List<BenefitsAndTaxCredits> findJobSeekersAllowance(UUID id);
+List<BenefitsAndTaxCredits> findWorkingTaxCredit(UUID id);
+List<BenefitsAndTaxCredits> findChildTaxCredit(UUID id);
+List<BenefitsAndTaxCredits> findChildBenefit(UUID id);
+List<BenefitsAndTaxCredits> findEmploymentSupportAllowance(UUID id);
+List<BenefitsAndTaxCredits> findUniversalCredit(UUID id);
+List<BenefitsAndTaxCredits> findDisabilityAllowance(UUID id);
+List<BenefitsAndTaxCredits> findAttendanceAllowance(UUID id);
+List<BenefitsAndTaxCredits> findCarersAllowance(UUID id);
+List<BenefitsAndTaxCredits> findHousingBenefit(UUID id);
+List<BenefitsAndTaxCredits> findMaternityAllowance(UUID id);
 List<BenefitsAndTaxCredits> findByFrequency(String frequency);
+
 }

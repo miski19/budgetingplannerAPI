@@ -20,16 +20,16 @@ public OtherIncomeService(OtherIncomeRepository otherIncomeRepository){
         this.otherIncomeRepository = otherIncomeRepository;
 }
 
-public List<OtherIncome> findOtherIncomeById(UUID id) {
-    return otherIncomeRepository.findOtherIncomeById(id);
+public List<OtherIncome> findOtherIncome(UUID id) {
+    return otherIncomeRepository.findOtherIncome(id);
 }
 
-public List<OtherIncome> findRentalIncomeById(UUID id) {
-    return otherIncomeRepository.findOtherIncomeById(id);
+public List<OtherIncome> findRentalIncome(UUID id) {
+    return otherIncomeRepository.findOtherIncome(id);
 }
 
-public List<OtherIncome> findInvestmentIncomeById(UUID id) {
-    return otherIncomeRepository.findOtherIncomeById(id);
+public List<OtherIncome> findInvestmentIncome(UUID id) {
+    return otherIncomeRepository.findOtherIncome(id);
 }
 
 public List<OtherIncome> findByFrequency(String frequency) {
@@ -46,8 +46,8 @@ OtherIncome updateOtherIncome(UUID id, OtherIncome updatedOtherIncome)
         OtherIncome otherIncome = otherIncomeRepository.findById(id).orElseThrow();
 
         otherIncome.setuser(updatedOtherIncome.getUser());
-        otherIncome.setRentalIncomeById(updatedOtherIncome.getRentalIncomeById()!= null ? updatedOtherIncome.getRentalIncomeById() : BigDecimal.ZERO);
-        otherIncome.setInvestmentIncomeById(updatedOtherIncome.getInvestmentIncomeById()!= null ? updatedOtherIncome.getInvestmentIncomeById() : BigDecimal.ZERO);
+        otherIncome.setRentalIncome(updatedOtherIncome.getRentalIncome()!= null ? updatedOtherIncome.getRentalIncome() : BigDecimal.ZERO);
+        otherIncome.setInvestmentIncome(updatedOtherIncome.getInvestmentIncome()!= null ? updatedOtherIncome.getInvestmentIncome() : BigDecimal.ZERO);
         otherIncome.setFrequency(updatedOtherIncome.getFrequency());
     
     return otherIncomeRepository.save(updatedOtherIncome);

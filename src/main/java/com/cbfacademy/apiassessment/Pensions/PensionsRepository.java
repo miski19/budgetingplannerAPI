@@ -12,8 +12,8 @@ public interface PensionsRepository extends ListCrudRepository<Pensions, UUID> {
 
 
 List<User> searchById(UUID id);
-List<Pensions> findPensionsById(UUID id);
-List<Pensions> findStatePensionById(UUID id);
-List<Pensions> findPrivatePensionById(UUID id);
+List<Pensions> findPensions(UUID id);
+List<Pensions> findStatePension(UUID id);
+List<Pensions> findPrivatePension(UUID id);
 List<Pensions> findByFrequency(String frequency);
 }

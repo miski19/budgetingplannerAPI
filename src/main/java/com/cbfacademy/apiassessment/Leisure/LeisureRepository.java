@@ -12,10 +12,10 @@ import com.cbfacademy.apiassessment.User.User;
 public interface LeisureRepository extends ListCrudRepository<Leisure, UUID> {
 
 List<User> searchById(UUID id);
-List<Leisure> findLeisureById(UUID id);
-List<Leisure> findEntertainmentById(UUID id);
-List<Leisure> findDiningOutById(UUID id);
-List<Leisure> findTravelById(UUID id);
-List<Leisure> findSportsMembershipById(UUID id);
+List<Leisure> findLeisure(UUID id);
+List<Leisure> findEntertainment(UUID id);
+List<Leisure> findDiningOut(UUID id);
+List<Leisure> findTravel(UUID id);
+List<Leisure> findSportsMembership(UUID id);
 List<Leisure> findByFrequency(String frequency);
 }
